@@ -5,7 +5,6 @@ import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,29 +25,18 @@ public class SellerLevel implements Serializable {
 	@Column(name = "seller_level_id")
 	@JsonAlias("seller_level_id")
 	private BigInteger sellerLevelId;
-
 	
+	@Column(name = "seller_level_type")
 	@JsonAlias("seller_level_type")
 	private String sellerLevelType;
-
-	@JsonAlias("member_phone")
-	private String memberPhone;
-
-	@Column(name = "member_password")
-    @JsonAlias("member_password")
-	private String memberPassword;
-
-	@Column(name = "member_name")
-    @JsonAlias("member_name")
-	private String memberName;
-
-	@Column(name = "seller_point")
-    @JsonAlias("seller_point")
-	private BigInteger sellerPoint;
-
-	@Column(name = "buyer_point")
-    @JsonAlias("buyer_point")
-	private BigInteger buyerPoint;
+	
+	@Column(name = "seller_level_des")
+	@JsonAlias("seller_level_des")
+	private String sellerLevelDes;
+	
+	@Column(name = "seller_level_point")
+	@JsonAlias("seller_level_point")
+	private BigInteger sellerLevelPoint;
 
 	@Column(name = "create_time")
 	@JsonAlias("create_time")
@@ -58,8 +46,5 @@ public class SellerLevel implements Serializable {
     @JsonAlias("edit_time")
 	private Date editTime;
 
-	@Column(name = "available")
-    @JsonAlias("abailable")
-	private Boolean available;
 	
 }
